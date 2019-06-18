@@ -3,9 +3,9 @@ import React, {Component} from 'react'
 class Todo extends Component{
     render(){
         return(
-            <p>
-            <h5>{`${this.props.list}`}</h5>
-            </p>
+            <div>
+                {this.props.list.map((e) => {return <p>{e}</p>})}
+            </div>
         )
     }
 }
