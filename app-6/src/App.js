@@ -22,7 +22,8 @@ class App extends Component {
 
   handleTask(newTask){
     this.setState({
-      taskList: [...this.state.taskList, this.state.newTask]
+      taskList: [...this.state.taskList, this.state.newTask],
+      newTask: ''
     })
   }
 
@@ -30,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>My To-Do List:</h1>
-        <input placeholder="Enter New Task" onChange={e => this.handleInput(e.target.value)} />
+        <input placeholder="Enter New Task" value={this.state.newTask} onChange={(e) => this.handleInput(e.target.value)} />
         <button onClick={e => this.handleTask(e.target.value)}>Add</button>
         <Todo list={this.state.taskList}/>
       </div>
@@ -38,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
